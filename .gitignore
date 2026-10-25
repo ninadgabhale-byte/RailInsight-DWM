@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Private configuration
+.env
+.env.*
+!.env.example
+
+# Railway datasets and uploads
+datasets/
+uploads/
+*.csv
+
+# Database backups
+*.db
+*.sqlite3
+*.sql.gz
+
+# ZIP files
+*.zip
+
+# Temporary files
+*.log
+*.tmp
+
+# IDE settings
+.vscode/
+.idea/
+/RailInsight_Phase2_frontend/
