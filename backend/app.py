@@ -34,7 +34,18 @@ from backend.reports import (
 # Initialize Flask app
 FRONTEND_DIR = BASE_DIR / "frontend"
 app = Flask(__name__, static_folder=str(FRONTEND_DIR), static_url_path="")
-CORS(app, expose_headers=["Content-Disposition"])
+CORS(
+    app,
+    resources={
+        r"/api/*": {
+            "origins": [
+                "https://railinsight-dwm-frontend.vercel.app",
+                "http://localhost:5500"
+            ]
+        }
+    },
+    expose_headers=["Content-Disposition"]
+)
 app.config["MAX_CONTENT_LENGTH"] = MAX_UPLOAD_MB * 1024 * 1024
 
 # In-memory active dataset cache and column mapping
