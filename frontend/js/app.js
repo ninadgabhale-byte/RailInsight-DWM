@@ -9,7 +9,7 @@
 const CONFIG = {
   // Flask backend address. Override before loading app.js with:
   //   <script>window.RAILINSIGHT_API_BASE = 'http://127.0.0.1:5001'</script>
-  API_BASE: (window.RAILINSIGHT_API_BASE || 'http://127.0.0.1:5000').replace(/\/$/, ''),
+  API_BASE: (window.RAILINSIGHT_API_BASE || 'https://railinsight-dwm-1.onrender.com').replace(/\/$/, ''),
   HEALTH_INTERVAL_MS: 15000,
   MAX_UPLOAD_MB: 200,
 };
