@@ -1,2 +1,17 @@
-RailInsight_Phase2_frontend/RailInsight/.vscode RailInsight_Phase2_frontend/RailInsight/backend RailInsight_Phase2_frontend/RailInsight/database RailInsight_Phase2_frontend/RailInsight/datasets RailInsight_Phase2_frontend/RailInsight/docs RailInsight_Phase2_frontend/RailInsight/frontend RailInsight_Phase2_frontend/RailInsight/models RailInsight_Phase2_frontend/RailInsight/reports RailInsight_Phase2_frontend/RailInsight/tests RailInsight_Phase2_frontend/RailInsight/uploads RailInsight_Phase2_frontend/RailInsight/.env.example RailInsight_Phase2_frontend/RailInsight/.gitignore RailInsight_Phase2_frontend/RailInsight/README.md RailInsight_Phase2_frontend/RailInsight/requirements.txt RailInsight_Phase2_frontend/RailInsight/test_backend.py
+Flask>=3.0,<4.0
+Flask-CORS>=4.0
+pandas>=2.2
+numpy>=1.26
+scikit-learn>=1.5
+mlxtend>=0.23
+SQLAlchemy>=2.0
+mysql-connector-python>=9.0
+python-dotenv>=1.0
+matplotlib>=3.8
+seaborn>=0.13
+plotly>=5.20
+openpyxl>=3.1
+reportlab>=4.0
+statsmodels>=0.14
+pytest>=8.0
 gunicorn>=21.2.0
