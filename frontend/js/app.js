@@ -396,19 +396,36 @@ const App = {
   async checkHealth(first = false) {
     const badge = document.getElementById('backend-badge');
     const was = this.state.online;
+
     try {
       const h = await Api.get('/api/health');
-      this.state.online = true; this.state.health = h;
+
+      this.state.online = true;
+      this.state.health = h;
+
       badge.className = 'status-badge online';
-      badge.querySelector('span').textContent = 'API online · ' + (h.database_connected ? 'MySQL connected' : 'MySQL not connected');
+
+      const database = h.database_connected
+        ? `${h.engine || 'Database'} connected`
+        : 'Database not connected';
+
+      const dataset = h.dataset_loaded
+        ? 'Dataset loaded'
+        : 'No dataset loaded';
+
+      badge.querySelector('span').textContent =
+        `API online · ${database} · ${dataset}`;
+
     } catch (e) {
       this.state.online = false;
       badge.className = 'status-badge offline';
       badge.querySelector('span').textContent = 'Backend offline';
     }
-    if (!was && this.state.online && !first) {           // backend just came back
+
+    if (!was && this.state.online && !first) {
       await this.refreshSummary();
       this.bump();
+
       const h = this.pages[this.current];
       if (h && h.show) h.show();
     }
